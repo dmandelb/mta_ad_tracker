@@ -15,10 +15,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_185614) do
     t.text "description"
     t.date "start_date"
     t.date "exp_date"
-    t.integer "company_id_id", null: false
+    t.integer "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id_id"], name: "index_ads_on_company_id_id"
+    t.index ["company_id"], name: "index_ads_on_company_id"
   end
 
   create_table "ads_cars", id: false, force: :cascade do |t|
@@ -38,5 +38,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_185614) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "ads", "company_ids"
+  add_foreign_key "ads", "companies"
 end

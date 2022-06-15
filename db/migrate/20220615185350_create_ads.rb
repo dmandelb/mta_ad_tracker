@@ -4,7 +4,7 @@ class CreateAds < ActiveRecord::Migration[7.0]
       t.text :description
       t.date :start_date
       t.date :exp_date
-      t.references :company_id, null: false, foreign_key: true
+      t.references :company, null: false, foreign_key: true
 
       t.timestamps
     end
